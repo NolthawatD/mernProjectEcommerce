@@ -25,8 +25,10 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-const server = app.listen(process.env.PORT, () => {
-  console.log(`Server is working on http://localhost:${process.env.PORT}`);
+const server = app.listen(process.env.PORT || 3000, () => {
+  console.log(
+    `Server is working on http://localhost:${process.env.PORT || 3000}`
+  );
 });
 
 // unhadled Promise Rejection (จัดการ promise no catce(err))
