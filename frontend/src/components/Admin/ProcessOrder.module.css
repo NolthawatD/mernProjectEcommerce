@@ -1,0 +1,233 @@
+.dashboard {
+  width: 100vw;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  position: absolute;
+}
+
+.newProductContainer {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgb(221, 221, 221);
+  border-left: 1px solid rgba(0, 0, 0, 0.158);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.newProductContainer h1 {
+  color: rgba(0, 0, 0, 0.733);
+  font: 300 2rem 'Roboto';
+  text-align: center;
+}
+
+.orderDetailsContainerBox {
+  margin: 2vmax;
+}
+
+.orderDetailsContainerBox > div {
+  display: flex;
+  margin: 1vmax 0;
+}
+
+.orderDetailsContainerBox > div > p {
+  font: 400 1vmax 'Roboto';
+  color: black;
+}
+.orderDetailsContainerBox > div > span {
+  margin: 0 1vmax;
+  font: 100 1vmax 'Roboto';
+  color: #575757;
+}
+
+.confirmOrderPage {
+  height: 100vh;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 6fr 3fr;
+}
+
+.confirmOrderPage > div:last-child {
+  border-left: 1px solid rgba(0, 0, 0, 0.247);
+}
+
+.confirmShippingArea {
+  padding: 5vmax;
+  padding-bottom: 0%;
+}
+
+.confirmShippingArea > p {
+  font: 400 1.8vmax 'Roboto';
+}
+
+.confirmCartItems {
+  padding: 5vmax 2vmax 5vmax 5vmax;
+  padding-top: 2vmax;
+}
+
+.confirmCartItemsContainer {
+  margin: 2vmax;
+  max-height: 20vmax;
+  overflow-y: auto;
+}
+
+.confirmCartItems > p {
+  font: 400 1.8vmax 'Roboto';
+}
+
+.confirmCartItemsContainer > div {
+  display: flex;
+  font: 400 1vmax 'Roboto';
+  align-items: center;
+  justify-content: space-between;
+  margin: 2vmax 0;
+}
+
+.confirmCartItemsContainer > div > img {
+  width: 3vmax;
+}
+
+.confirmCartItemsContainer > div > a {
+  color: #575757;
+  margin: 0 2vmax;
+  width: 60%;
+  text-decoration: none;
+}
+
+.confirmCartItemsContainer > div > span {
+  font: 100 1vmax 'Roboto';
+  color: #5e5e5e;
+  display: flex;
+}
+
+.updateOrderForm {
+  margin: 5vmax 0;
+  padding: 3vmax;
+  background-color: white;
+}
+
+.updateOrderForm > div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.updateOrderForm > div > select {
+  padding: 1vmax 4vmax;
+  margin: 2rem 0;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.267);
+  border-radius: 4px;
+  font: 300 0.9vmax cursive;
+  outline: none;
+}
+
+.updateOrderForm > div > svg {
+  position: absolute;
+  transform: translateX(1vmax);
+  font-size: 1.6vmax;
+  color: rgba(0, 0, 0, 0.623);
+}
+
+#updateOrderBtn {
+  border: none;
+  background-color: tomato;
+  color: white;
+  font: 300 0.9vmax 'Roboto';
+  width: 100%;
+  padding: 0.8vmax;
+  cursor: pointer;
+  transition: all 0.5s;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+}
+
+#updateOrderBtn:hover {
+  background-color: rgb(179, 66, 46);
+}
+
+@media screen and (max-width: 600px) {
+  .confirmOrderPage {
+    grid-template-columns: 1fr;
+    height: unset;
+  }
+
+  .confirmOrderPage > div:last-child {
+    border-left: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.247);
+  }
+
+  .confirmShippingArea > p {
+    font: 400 6vw 'Roboto';
+  }
+
+  .confirmShippingAreaBox > div {
+    display: flex;
+    margin: 6vw 0;
+  }
+
+  .confirmShippingAreaBox > div > p {
+    font: 400 4vw 'Roboto';
+  }
+
+  .confirmShippingAreaBox > div > span {
+    font: 100 4vw 'Roboto';
+  }
+
+  .confirmCartItems > p {
+    font: 400 6vw 'Roboto';
+  }
+
+  .confirmCartItemsContainer {
+    max-height: 50vw;
+  }
+
+  .confirmCartItemsContainer > div {
+    font: 400 4vw 'Roboto';
+    margin: 4vw 0;
+  }
+
+  .confirmCartItemsContainer > div > img {
+    width: 10vw;
+  }
+
+  .confirmCartItemsContainer > div > a {
+    margin: 0;
+    width: 30%;
+  }
+
+  .confirmCartItemsContainer > div > span {
+    font: 100 4vw 'Roboto';
+  }
+
+  .orderDetailsContainerBox > div {
+    margin: 6vw 0;
+  }
+
+  .orderDetailsContainerBox > div > p {
+    font: 400 4vw 'Roboto';
+  }
+  .orderDetailsContainerBox > div > span {
+    font: 100 4vw 'Roboto';
+  }
+
+  .updateOrderForm {
+    padding: 5vmax;
+  }
+
+  .updateOrderForm > div > select {
+    padding: 2.5vmax 5vmax;
+    font: 300 1.7vmax cursive;
+  }
+
+  .updateOrderForm > div > svg {
+    font-size: 2.8vmax;
+  }
+
+  #updateOrderBtn {
+    font: 300 1.9vmax 'Roboto';
+    padding: 1.8vmax;
+  }
+}

@@ -1,0 +1,40 @@
+#updateProfileImage > img {
+  width: 3vmax;
+  border-radius: 100%;
+  margin: 1vmax;
+}
+
+#updateProfileImage > input {
+  display: flex;
+  padding: 0%;
+}
+
+#updateProfileImage > input::file-selector-button {
+  cursor: pointer;
+  width: 100%;
+  z-index: 2;
+  height: 5vh;
+  border: none;
+  margin: 0%;
+  font: 400 0.8vmax cursive;
+  transition: all 0.5s;
+  padding: 0 1vmax;
+  color: rgba(0, 0, 0, 0.623);
+  background-color: rgb(255, 255, 255);
+}
+
+#updateProfileImage > input::file-selector-button:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+@media screen and (max-width: 600px) {
+  #updateProfileImage > img {
+    width: 8vmax;
+    border-radius: 100%;
+  }
+
+  #updateProfileImage > input::file-selector-button {
+    height: 7vh;
+    font: 400 1.8vmax cursive;
+  }
+}
