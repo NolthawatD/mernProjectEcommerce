@@ -36,6 +36,7 @@ const LoginSignUp = () => {
     email: '',
     password: '',
   });
+  const [isLogin, setIsLogin] = useState(false);
 
   const { name, email, password } = user;
 
@@ -44,7 +45,7 @@ const LoginSignUp = () => {
 
   const loginSubmit = (e) => {
     e.preventDefault();
-
+    setIsLogin(true);
     dispatch(login(loginEmail, loginPassword));
   };
 
@@ -79,14 +80,14 @@ const LoginSignUp = () => {
   const redirect = location.search ? location.search.split('=')[1] : 'account';
 
   useEffect(() => {
-    if (error && isAuthenticated) {
+    if (error && isLogin) {
       alert.error(error);
       dispatch(clearErrors());
     }
     if (isAuthenticated) {
       navigate('/' + redirect);
     }
-  }, [dispatch, alert, error, navigate, isAuthenticated, redirect]);
+  }, [dispatch, alert, error, navigate, isAuthenticated, redirect, isLogin]);
 
   const switchTabs = (e, tab) => {
     if (tab === 'login') {
