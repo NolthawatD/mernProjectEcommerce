@@ -31,16 +31,20 @@ const LoginSignUp = () => {
 
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
+
   const [user, setUser] = useState({
     name: '',
     email: '',
     password: '',
   });
+
   const [isLogin, setIsLogin] = useState(false);
 
   const { name, email, password } = user;
 
-  const [avatar, setAvatar] = useState();
+  const [avatar, setAvatar] = useState(
+    'https://res.cloudinary.com/nolthawat/image/upload/v1661703941/avatars/Profile_qnoaqg.png'
+  );
   const [avatarPreview, setAvatarPreview] = useState('/Profile.png');
 
   const loginSubmit = (e) => {

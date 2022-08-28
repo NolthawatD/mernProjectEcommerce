@@ -32,6 +32,7 @@ const UpdateUser = () => {
     error: updateError,
     isUpdated,
   } = useSelector((state) => state.profile);
+  const { user: userCurrent } = useSelector((state) => state.user);
 
   const userId = params.id;
 
@@ -42,13 +43,14 @@ const UpdateUser = () => {
   useEffect(() => {
     console.log('send ', userId);
     if (user && user._id !== userId) {
-      console.log('dispatch getUserDetails ', userId);
+      // console.log('dispatch getUserDetails ', userId);
       dispatch(getUserDetails(userId));
     } else {
       setName(user.name);
       setEmail(user.email);
       setRole(user.role);
     }
+
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
@@ -64,8 +66,17 @@ const UpdateUser = () => {
       navigate('/admin/users');
       dispatch({ type: UPDATE_USER_RESET });
     }
-    console.log('user  ', user);
-  }, [dispatch, alert, error, isUpdated, navigate, updateError, user, userId]);
+  }, [
+    dispatch,
+    alert,
+    error,
+    isUpdated,
+    navigate,
+    updateError,
+    user,
+    userId,
+    userCurrent,
+  ]);
 
   const updateUserSubmitHandler = (e) => {
     e.preventDefault();
