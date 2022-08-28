@@ -41,6 +41,8 @@ const ProductDetails = () => {
     (state) => state.newReview
   );
 
+  const { isAuthenticated } = useSelector((state) => state.user);
+
   const [quantity, setQuantity] = useState(1);
   const [open, setOpen] = useState(false);
   const [rating, setRating] = useState(0);
@@ -68,6 +70,9 @@ const ProductDetails = () => {
   };
 
   const addToCartHandler = () => {
+    if (isAuthenticated === false) {
+      return alert.info('Sorry, please login for get your cart');
+    }
     dispatch(addItemsToCart(params.id, quantity));
     alert.success('Item Added to Cart');
   };

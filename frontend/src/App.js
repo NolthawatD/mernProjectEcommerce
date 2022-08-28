@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 
 import MainHeader from './components/layout/Header/MainHeader';
-import Header from './components/layout/Header/Header';
+// import Header from './components/layout/Header/Header';
 import Footer from './components/layout/Footer/Footer';
 import Home from './components/Home/Home';
 import ProductDetails from './components/Product/ProductDetails';
@@ -67,7 +67,6 @@ function App() {
     });
 
     store.dispatch(loadUser());
-
     getStripeApiKey();
   }, []);
 
@@ -76,7 +75,7 @@ function App() {
   return (
     <div>
       <MainHeader />
-      <Header />
+      {/* <Header /> */}
       {isAuthenticated && <UserOptions user={user} />}
       <Routes>
         <Route path='/' element={<Home />} />

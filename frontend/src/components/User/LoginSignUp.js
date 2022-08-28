@@ -79,7 +79,7 @@ const LoginSignUp = () => {
   const redirect = location.search ? location.search.split('=')[1] : 'account';
 
   useEffect(() => {
-    if (error) {
+    if (error && isAuthenticated) {
       alert.error(error);
       dispatch(clearErrors());
     }

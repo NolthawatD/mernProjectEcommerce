@@ -46,7 +46,7 @@ const Products = () => {
 
   const keyword = params.keyword;
 
-  console.log(products.length > 0);
+  // console.log(products.length > 0);
 
   const setCurrentPageNo = (e) => {
     setCurrentPage(e);
